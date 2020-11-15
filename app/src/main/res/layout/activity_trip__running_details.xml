@@ -248,59 +248,59 @@
                 app:sv_steps="@array/stepView"
                 />-->
 
-            <com.google.android.material.card.MaterialCardView
-                android:foreground="?attr/selectableItemBackground"
-                android:id="@+id/advacePayInfoCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:foreground="?attr/selectableItemBackground"-->
+<!--                android:id="@+id/advacePayInfoCard"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:weightSum="10"
-                    android:layout_margin="8dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="center"-->
+<!--                    android:weightSum="10"-->
+<!--                    android:layout_margin="8dp">-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="2"
-                        android:orientation="horizontal"
-                        >
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="8dp"-->
+<!--                        android:layout_weight="2"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        >-->
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/bkash"/>
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/rocket"/>
+<!--                        <ImageView-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:src="@drawable/bkash"/>-->
+<!--                        <ImageView-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:src="@drawable/rocket"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:text="Please make a initial payment through Bkash or Rocket to complete the rental."
-                        android:textColor="@color/red"
-                        android:textStyle="bold"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="6"-->
+<!--                        android:text="Please make a initial payment through Bkash or Rocket to complete the rental."-->
+<!--                        android:textColor="@color/red"-->
+<!--                        android:textStyle="bold"/>-->
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/arrow_right_24dp"/>
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:src="@drawable/arrow_right_24dp"/>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </com.google.android.material.card.MaterialCardView>
+<!--            </com.google.android.material.card.MaterialCardView>-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/driverInfoCard"
@@ -512,55 +512,7 @@
                             android:textSize="16sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="30dp"
-                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="center"
-                            android:textSize="22sp"
-                            android:text="Give a Rating"/>
-
-                        <RatingBar
-                            android:id="@+id/ratingBarBidTripDetails"
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_weight="1"
-                            android:numStars="5"
-                            android:rating="1" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Give Feedback to this trip: " />
-
-                    <EditText
-                        android:focusableInTouchMode="true"
-                        android:id="@+id/feedBackDetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginBottom="20dp"
-                        android:inputType="textMultiLine"
-                        android:background="@drawable/edit_text_outline"
-                        android:minHeight="100dp"
-                        android:padding="10dp"
-                        />
 
                     <Button
                         android:visibility="gone"
@@ -571,18 +523,13 @@
                         android:padding="16dp"
                         android:background="@drawable/complete_button"
                         android:text="Complete Trip"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:textSize="14sp"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="5dp"
-                        android:layout_height="wrap_content"
-                        android:text="*For Compeleting Your Trip ,Please Ask The Driver "/>
+
                     <Button
 
                         android:id="@+id/cancelBTnTripdetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
                         android:padding="16dp"
                         android:textColor="#fff"
                         android:background="@drawable/complete_button"
