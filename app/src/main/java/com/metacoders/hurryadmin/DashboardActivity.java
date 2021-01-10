@@ -2,10 +2,12 @@ package com.metacoders.hurryadmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -33,6 +35,56 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(p);
             }
         });
+
+        findViewById(R.id.allTrips).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog dialog = new AlertDialog.Builder(DashboardActivity.this).create();
+
+                dialog.setTitle("Error ");
+                dialog.setCancelable(true);
+                dialog.setMessage("Firebase Limit Exceeded ..");
+                dialog.show();
+
+            }
+        });
+        findViewById(R.id.stats).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog dialog = new AlertDialog.Builder(DashboardActivity.this).create();
+
+                dialog.setTitle("Error ");
+                dialog.setCancelable(true);
+                dialog.setMessage("Firebase Limit Exceeded ..");
+                dialog.show();
+
+            }
+        });
+        findViewById(R.id.carLatout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog dialog = new AlertDialog.Builder(DashboardActivity.this).create();
+
+                dialog.setTitle("Error ");
+                dialog.setCancelable(true);
+                dialog.setMessage("Firebase Limit Exceeded ..");
+                dialog.show();
+
+            }
+        });
+        findViewById(R.id.driverOption).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog dialog = new AlertDialog.Builder(DashboardActivity.this).create();
+
+                dialog.setTitle("Error ");
+                dialog.setCancelable(true);
+                dialog.setMessage("Firebase Limit Exceeded ..");
+                dialog.show();
+
+            }
+        });
+
 
         //throw new RuntimeException("Test Crash"); // Force a crash
     }
