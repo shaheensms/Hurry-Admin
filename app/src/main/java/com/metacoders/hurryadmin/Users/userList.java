@@ -1,5 +1,6 @@
 package com.metacoders.hurryadmin.Users;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -91,7 +92,7 @@ public class userList extends AppCompatActivity implements UserListAdapter.ItemC
 
             }
         }
-        Log.d("TAG", "SearchForData: " + fillerTedList.size());
+
         listRcv.setAdapter(new UserListAdapter(getApplicationContext(), fillerTedList, userList.this));
     }
 
@@ -112,7 +113,7 @@ public class userList extends AppCompatActivity implements UserListAdapter.ItemC
                 } catch (Exception e) {
 
                 }
-                setupRecylerVIew(userProfileModelList);
+                setupRecylerView(userProfileModelList);
 
             }
 
@@ -121,10 +122,9 @@ public class userList extends AppCompatActivity implements UserListAdapter.ItemC
 
             }
         });
-
     }
 
-    public void setupRecylerVIew(List<userModel> userProfileModelList) {
+    public void setupRecylerView(List<userModel> userProfileModelList) {
 
         listRcv.setAdapter(new UserListAdapter(getApplicationContext(), userProfileModelList, userList.this));
 
@@ -134,6 +134,8 @@ public class userList extends AppCompatActivity implements UserListAdapter.ItemC
 
     @Override
     public void onItemClick(userModel model) {
-
+        Intent p = new Intent(getApplicationContext(), UserProfile.class);
+        p.putExtra("MODEL", model);
+        startActivity(p);
     }
 }

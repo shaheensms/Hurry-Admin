@@ -18,7 +18,6 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img"
-
                 android:src="@drawable/placeholderman"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
@@ -26,7 +25,7 @@
                 android:layout_marginTop="8dp" />
 
             <LinearLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -40,8 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-
-                    android:text="Business Info"
+                    android:text="Account Status"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -63,7 +61,7 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -91,24 +89,19 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
-                            android:layout_weight=".4"
+                            android:layout_weight=".9"
                             android:gravity="left|center"
-                            android:text="Shop Name"
+                            android:text="Status"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/shop_name"
-                            android:layout_width="0dp"
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/swtich"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left|center"
-                            android:layout_marginLeft="@dimen/_20sdp"
-                            android:layout_weight=".6"
-                            android:background="@null"
-                            android:gravity="left|center"
-                            android:inputType="textPersonName"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:layout_gravity="center|end"
+
+                             />
 
                     </LinearLayout>
 
@@ -481,16 +474,18 @@
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/driver_id_activity"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="left|center"
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_weight=".6"
                             android:background="@null"
                             android:gravity="left|center"
-
+                            android:text="Check All Images"
+                            android:drawableTint="@color/red"
+                            android:drawableEnd="@drawable/arrow_right_24dp"
                             android:inputType="textPersonName"
 
                             android:textColor="@color/black"

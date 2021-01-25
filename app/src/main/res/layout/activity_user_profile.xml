@@ -20,21 +20,20 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img"
-
-                android:src="@drawable/placeholderman"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:src="@drawable/placeholderman" />
 
             <LinearLayout
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/_10sdp"
-                android:paddingRight="@dimen/_10sdp">
+                android:paddingRight="@dimen/_10sdp"
+                android:visibility="gone">
 
 
                 <TextView
@@ -65,12 +64,12 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
@@ -155,8 +154,8 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <TextView
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left"
@@ -166,15 +165,16 @@
                 android:text="Car Info"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
@@ -218,6 +218,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -254,16 +255,17 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:layout_marginBottom="@dimen/_2sdp"
-                        android:paddingTop="@dimen/_5sdp"
-                        android:paddingBottom="@dimen/_5sdp"
                         android:orientation="horizontal"
                         android:paddingLeft="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_5sdp"
                         android:paddingRight="@dimen/_20sdp"
+                        android:paddingBottom="@dimen/_5sdp"
                         android:weightSum="1">
 
 
@@ -292,6 +294,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -328,6 +331,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -364,6 +368,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -400,6 +405,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -439,8 +445,8 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <TextView
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left"
@@ -450,15 +456,16 @@
                 android:text="Driver Info"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
@@ -503,6 +510,7 @@
                             android:textSize="14sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
@@ -544,6 +552,7 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -599,9 +608,7 @@
                             android:layout_weight=".6"
                             android:background="@null"
                             android:gravity="left|center"
-
                             android:inputType="textPersonName"
-
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -660,27 +667,30 @@
                             android:layout_gravity="left|center"
                             android:layout_weight=".4"
                             android:gravity="left|center"
-                            android:text="Email Address"
+                            android:text="Images"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/email"
+                        <TextView
+                            android:id="@+id/fff"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="left|center"
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_weight=".6"
                             android:background="@null"
+                            android:clickable="true"
                             android:gravity="left|center"
-                            android:inputType="textEmailAddress"
+                            android:text="Check All Images"
+                            android:drawableTint="@color/red"
+                            android:drawableEnd="@drawable/arrow_right_24dp"
                             android:textColor="@color/black"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:focusable="true" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -688,6 +698,7 @@
                         android:orientation="horizontal"
                         android:paddingLeft="@dimen/_20sdp"
                         android:paddingRight="@dimen/_20sdp"
+                        android:visibility="gone"
                         android:weightSum="1">
 
 
@@ -725,7 +736,6 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left"
@@ -735,15 +745,16 @@
                 android:text="Payment Info"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <androidx.cardview.widget.CardView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout

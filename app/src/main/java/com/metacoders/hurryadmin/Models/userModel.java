@@ -1,7 +1,10 @@
 package com.metacoders.hurryadmin.Models;
 
-public class userModel {
-    String userFined, phone, userTripCount, userProPic, userName, userTripList, userWallet, userIdState, userTotalSpent, userPhone;
+import java.io.Serializable;
+
+public class userModel implements Serializable {
+    String userFined, phone, userTripCount, userProPic, userName, userTripList, userWallet, userIdState, userTotalSpent, userPhone,
+            nid_back , nid_front;
 
 
     public userModel(String userFined, String userTripCount, String userProPic, String userName, String userTripList, String userWallet, String userIdState, String userTotalSpent) {
@@ -16,6 +19,22 @@ public class userModel {
     }
 
     public userModel() {
+    }
+
+    public String getNid_back() {
+        return nid_back;
+    }
+
+    public void setNid_back(String nid_back) {
+        this.nid_back = nid_back;
+    }
+
+    public String getNid_front() {
+        return nid_front;
+    }
+
+    public void setNid_front(String nid_front) {
+        this.nid_front = nid_front;
     }
 
     public String getPhone() {

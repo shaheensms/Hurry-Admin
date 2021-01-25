@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Users.UserProfile"></activity>
+        <activity android:name=".ambulance.ambulance_req_details"></activity>
+        <activity android:name=".ambulance.allAmbulancePage" />
+        <activity android:name=".AllTripList.tripDetails" />
+        <activity android:name=".AllTripList.allTripPage" />
+        <activity android:name=".GalleryView" />
+        <activity android:name=".Users.UserProfile" />
         <activity android:name=".Users.userList" />
         <activity android:name=".Drivers.DriverList" />
         <activity android:name=".Drivers.DriverProfile" />

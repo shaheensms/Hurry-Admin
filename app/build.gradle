@@ -53,5 +53,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     // size
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.veinhorn.scrollgalleryview:library:1.2.6'
+    implementation 'com.veinhorn.scrollgalleryview:picasso-loader:1.2.4'
 
 }
