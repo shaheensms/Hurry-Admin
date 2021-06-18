@@ -82,7 +82,7 @@ public class allTripPage extends AppCompatActivity {
 
                         Intent o = new Intent(getApplicationContext(), tripDetails.class);
                         //carry data to their
-                        o.putExtra("TRANSMODEL" , new TransactionsModel( getItem(postion).getUserId(), "","" ,getItem(postion).getPostId(),"" , "" ));
+                        o.putExtra("TRANSMODEL" , new TransactionsModel( getItem(postion).getUserId(), "","" ,getItem(postion).getPostId(),"" , "" , "" ));
 
                         startActivity(o);
 

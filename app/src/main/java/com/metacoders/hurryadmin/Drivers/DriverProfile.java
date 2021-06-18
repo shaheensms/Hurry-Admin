@@ -1,14 +1,14 @@
 package com.metacoders.hurryadmin.Drivers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurryadmin.Constants.Const;
 import com.metacoders.hurryadmin.GalleryView;
+import com.metacoders.hurryadmin.Models.DriverWalletModel;
 import com.metacoders.hurryadmin.Models.driverProfileModel;
 import com.metacoders.hurryadmin.R;
 
@@ -27,11 +28,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DriverProfile extends AppCompatActivity {
 
-    TextView ac_type, build_company, car_licence, car_model, car_type,car_year,seat_count,driver_id_activity,driver_join_date,name,phn_num,email;
-    driverProfileModel model ;
-    CircleImageView circleImageView ;
-    SwitchMaterial switchMaterial  ;
-    DatabaseReference mref  ;
+    TextView ac_type, build_company, car_licence, car_model, car_type, car_year, seat_count, driver_id_activity, driver_join_date, name, phn_num, email;
+    driverProfileModel model;
+    CircleImageView circleImageView;
+    SwitchMaterial switchMaterial;
+    DatabaseReference mref;
+    TextView manageTransaction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,10 @@ public class DriverProfile extends AppCompatActivity {
         setContentView(R.layout.activity_driver_profile);
 
         // recive the model
-        switchMaterial = findViewById(R.id.swtich) ;
+        switchMaterial = findViewById(R.id.swtich);
+        manageTransaction = findViewById(R.id.manageTransactions);
 
-        circleImageView = findViewById(R.id.img) ;
+        circleImageView = findViewById(R.id.img);
         ac_type = findViewById(R.id.ac_type);
         build_company = findViewById(R.id.build_company);
         car_licence = findViewById(R.id.car_licence);
@@ -55,7 +59,7 @@ public class DriverProfile extends AppCompatActivity {
         phn_num = findViewById(R.id.phn_num);
         email = findViewById(R.id.email);
 
-        model = (driverProfileModel) getIntent().getSerializableExtra("MODEL") ;
+        model = (driverProfileModel) getIntent().getSerializableExtra("MODEL");
         mref = FirebaseDatabase.getInstance().getReference(Const.DriverProfileDirectory)
                 .child(model.getUserID())
                 .child("driverIdActivated");
@@ -65,30 +69,29 @@ public class DriverProfile extends AppCompatActivity {
         switchMaterial.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                 mref.setValue("ACTIVATE").addOnSuccessListener(new OnSuccessListener<Void>() {
-                     @Override
-                     public void onSuccess(Void aVoid) {
-                         Toast.makeText(getApplicationContext(), "Driver Profile Activated" , Toast.LENGTH_SHORT).show();
-                     }
-                 }).addOnFailureListener(new OnFailureListener() {
-                     @Override
-                     public void onFailure(@NonNull Exception e) {
-                         Toast.makeText(getApplicationContext(), "Error : "+ e.getMessage() , Toast.LENGTH_SHORT).show();
-                     }
-                 }) ;
-
-                }
-                else {
-                    mref.setValue("DEACTIVATED").addOnSuccessListener(new OnSuccessListener<Void>() {
+                if (isChecked) {
+                    mref.setValue("ACTIVATE").addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(getApplicationContext(), "Driver Profile Activated" , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Driver Profile Activated", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), "Error : "+ e.getMessage() , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                } else {
+                    mref.setValue("DEACTIVATED").addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getApplicationContext(), "Driver Profile Activated", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -96,29 +99,38 @@ public class DriverProfile extends AppCompatActivity {
             }
         });
 
-       driver_id_activity.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               // making the list
-               ArrayList<String> arrayList = new ArrayList<String>();
-               arrayList.add(model.getProfile_picture())  ;
-               arrayList.add(model.getDriver_license_image())  ;
-               arrayList.add(model.getNid_card_image())  ;
-               arrayList.add(model.getFitness_license_image())  ;
-               arrayList.add(model.getTax_token_image())  ;
-               arrayList.add(model.getVehicle_reg_image())  ;
-               arrayList.add(model.getCarPics().getCar_back_image())  ;
-               arrayList.add(model.getCarPics().getCar_front_image())  ;
-               arrayList.add(model.getCarPics().getCar_inside_image())  ;
-               arrayList.add(model.getCarPics().getCar_side_image())  ;
+        driver_id_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // making the list
+                ArrayList<String> arrayList = new ArrayList<String>();
+                arrayList.add(model.getProfile_picture());
+                arrayList.add(model.getDriver_license_image());
+                arrayList.add(model.getNid_card_image());
+                arrayList.add(model.getFitness_license_image());
+                arrayList.add(model.getTax_token_image());
+                arrayList.add(model.getVehicle_reg_image());
+                arrayList.add(model.getCarPics().getCar_back_image());
+                arrayList.add(model.getCarPics().getCar_front_image());
+                arrayList.add(model.getCarPics().getCar_inside_image());
+                arrayList.add(model.getCarPics().getCar_side_image());
 
-               Intent p = new Intent(getApplicationContext() , GalleryView.class);
-               p.putExtra( "LIST", arrayList) ;
-               startActivity(p);
+                Intent p = new Intent(getApplicationContext(), GalleryView.class);
+                p.putExtra("LIST", arrayList);
+                startActivity(p);
 
 
-           }
-       });
+            }
+        });
+
+        manageTransaction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext(), manageDriverWallet.class);
+                p.putExtra("DID" , model.getUserID()) ;
+                startActivity(p);
+            }
+        });
 
     }
 
@@ -132,17 +144,20 @@ public class DriverProfile extends AppCompatActivity {
         name.setText(models.getDriverName());
         phn_num.setText(models.getPhone());
         driver_join_date.setText(models.getDriverJoinedDate());
-        build_company.setText(models.getBuildCompany()+"");
-        email.setText(models.getEmail()+"");
+        build_company.setText(models.getBuildCompany() + "");
+        email.setText(models.getEmail() + "");
         Glide.with(getApplicationContext())
                 .load(model.getProfile_picture())
                 .into(circleImageView);
-        if(models.getDriverIdActivated().toLowerCase().equals("activate")){
+        if (models.getDriverIdActivated().toLowerCase().equals("activate")) {
             switchMaterial.setChecked(true);
 
-        }else {
+        } else {
             switchMaterial.setChecked(false);
         }
 
     }
+
+
+
 }

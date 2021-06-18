@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.metacoders.hurryadmin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ambulance.ambulance_req_details"></activity>
+        <activity android:name=".Drivers.manageDriverWallet"></activity>
+        <activity android:name=".AddNewsFeed" />
+        <activity android:name=".ambulance.ambulance_req_details" />
         <activity android:name=".ambulance.allAmbulancePage" />
         <activity android:name=".AllTripList.tripDetails" />
         <activity android:name=".AllTripList.allTripPage" />

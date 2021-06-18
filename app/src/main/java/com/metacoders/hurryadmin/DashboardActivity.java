@@ -33,6 +33,13 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.newsFeedList).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext(), AddNewsFeed.class);
+                startActivity(p);
+            }
+        });
         findViewById(R.id.addLoc).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

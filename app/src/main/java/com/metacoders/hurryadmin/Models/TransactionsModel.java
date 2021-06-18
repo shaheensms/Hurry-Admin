@@ -3,18 +3,27 @@ package com.metacoders.hurryadmin.Models;
 import java.io.Serializable;
 
 public class TransactionsModel implements Serializable {
-    String  userUid , amountPaid ,trxID , tripId, time , payment_type ;
+    String  userUid , amountPaid ,trxID , tripId, time , payment_type , status ;
 
     public TransactionsModel() {
     }
 
-    public TransactionsModel(String userUid, String amountPaid, String trxID, String tripId, String time, String payment_type) {
+    public TransactionsModel(String userUid, String amountPaid, String trxID, String tripId, String time, String payment_type, String status) {
         this.userUid = userUid;
         this.amountPaid = amountPaid;
         this.trxID = trxID;
         this.tripId = tripId;
         this.time = time;
         this.payment_type = payment_type;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getUserUid() {
