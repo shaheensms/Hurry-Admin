@@ -96,6 +96,8 @@ public class Trans_Tour_Details extends AppCompatActivity {
         loadTripDetails(transactionsModel.getTripId());
         loadUserData(transactionsModel.getUserUid());
 
+        transAmount.setText(transactionsModel.getAmountPaid()+"");
+
         accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
